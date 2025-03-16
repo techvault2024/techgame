@@ -14,8 +14,15 @@ spec:
     spec:
       containers:
         - name: techgame
-          image: techvault/techgame:latest # Image that will be used to containers in the cluster
+          image: techvault2024/techgame:latest # Image that will be used to containers in the cluster
           imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
 
